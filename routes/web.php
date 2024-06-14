@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\Admin\PokemonController as AdminPokemonController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -33,9 +34,13 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::middleware(['auth','role:admin'])->group(function(){
-    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
-}); //nuh-huh no user allowed at my birthday party
+//Route::middleware(['auth','role:admin'])->group(function(){
+//    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+//});
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::resource('pokemon', AdminPokemonController::class);
+});
 
 Route::get('/pokemon', [PokemonController::class, 'index'])->name('pokemon.index');
 Route::get('/pokemon/{id}', [PokemonController::class, 'show'])->name('pokemon.show');
