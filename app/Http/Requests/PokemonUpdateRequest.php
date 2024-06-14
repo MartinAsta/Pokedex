@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PokemonCreateRequest extends FormRequest
+class PokemonUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class PokemonCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|unique:pokemon|max:20',
+            'name' => 'required|string|max:255|unique:pokemon,name,' . $this->route('pokemon')->id,
             'hp' => 'required|integer',
             'weight' => 'required|numeric',
             'height' => 'required|numeric',

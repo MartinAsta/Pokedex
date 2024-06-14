@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 use App\Http\Requests\PokemonCreateRequest;
+use App\Http\Requests\PokemonUpdateRequest;
 
 class PokemonController extends Controller
 {
@@ -68,9 +69,16 @@ class PokemonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pokemon $pokemon)
+    public function update(PokemonUpdateRequest $request, Pokemon $pokemon)
     {
-        //
+        $pokemon->name = $request->validated()['name'];
+        $pokemon->hp = $request->validated()['hp'];
+        $pokemon->height = $request->validated()['height'];
+        $pokemon->weight = $request->validated()['weight'];
+
+        $pokemon->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -78,6 +86,8 @@ class PokemonController extends Controller
      */
     public function destroy(Pokemon $pokemon)
     {
-        //
+        $pokemon->delete();
+
+        return redirect()->back();
     }
 }
