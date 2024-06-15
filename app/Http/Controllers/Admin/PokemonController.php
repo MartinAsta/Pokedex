@@ -45,6 +45,7 @@ class PokemonController extends Controller
         $pokemon->hp = $request->validated()['hp'];
         $pokemon->weight = $request->validated()['weight'];
         $pokemon->height = $request->validated()['height'];
+        $pokemon->type1_id = $request->validated()['type1'];
         $pokemon->save();
 
         return redirect()->route('pokemon.index');
@@ -75,6 +76,7 @@ class PokemonController extends Controller
         $pokemon->hp = $request->validated()['hp'];
         $pokemon->height = $request->validated()['height'];
         $pokemon->weight = $request->validated()['weight'];
+        $pokemon->type1_id = $request->validated(['type1_id']);
 
         $pokemon->save();
 

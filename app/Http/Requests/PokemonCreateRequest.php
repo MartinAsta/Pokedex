@@ -26,6 +26,7 @@ class PokemonCreateRequest extends FormRequest
             'hp' => 'required|integer',
             'weight' => 'required|numeric',
             'height' => 'required|numeric',
+            'type1' => 'required|numeric',
         ];
     }
 }

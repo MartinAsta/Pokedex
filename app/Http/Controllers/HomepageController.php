@@ -9,7 +9,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $pokemon = Pokemon::paginate(3);
+        $pokemon = Pokemon::with(['type1'])->paginate(3);
 
         return view('pokemon.index', [
             'pokemon' => $pokemon,

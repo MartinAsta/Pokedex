@@ -15,7 +15,7 @@ class TypesTableData extends Seeder
     {
         DB::table('types')->insert([
             'name'=>'Normal',
-            'image'=>'/storage/app/public/images/types/normal.png',
+            'image'=>'images/types/normal.png',
             'colour'=>'#808080'
         ]);
     }

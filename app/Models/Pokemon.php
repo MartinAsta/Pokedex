@@ -13,4 +13,8 @@ class Pokemon extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function type1(){
+        return $this->belongsTo(Types::class,"type1_id");
+    }
 }
