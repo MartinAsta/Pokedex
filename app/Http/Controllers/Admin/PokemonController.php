@@ -48,7 +48,7 @@ class PokemonController extends Controller
         $pokemon->type1_id = $request->validated()['type1'];
         $pokemon->save();
 
-        return redirect()->route('pokemon.index');
+        return redirect()->route('admin.pokemon.index');
     }
 
     /**
@@ -64,7 +64,7 @@ class PokemonController extends Controller
      */
     public function edit(Pokemon $pokemon)
     {
-        //
+        return view('admin.pokemon.edit');
     }
 
     /**

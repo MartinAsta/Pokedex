@@ -12,7 +12,7 @@
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div class="flex justify-between mt-8">
                         <div class=" text-2xl">
-                            Liste des Pokemon
+                            Liste des Pokemon (ADMIN)
                         </div>
 
                         <div class="flex  items-center justify-center space-x-8">
@@ -26,11 +26,8 @@
                         <table class="table-auto w-full">
                             <thead>
                                 <tr class="uppercase text-left">
-                                    <th class="px-4 py-2 border">Titre</th>
-                                    <th class="px-4 py-2 border">Auteur</th>
-                                    <th class="px-4 py-2 border">Date de publication</th>
-                                    <th class="px-4 py-2 border">Dernière modification</th>
-                                    <th class="px-4 py-2 border">Actions</th>
+                                    <th class="px-4 py-2 border">Pokemon :</th>
+                                    <th class="px-4 py-2 border"></th>
                                 </tr>
                             </thead>
                             <tbody>
