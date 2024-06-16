@@ -48,6 +48,13 @@
                         <x-input-error :messages="$errors->get('height')" class="mt-2" />
                     </div>
 
+                    <div>
+                        <x-input-label for="type1" :value="__('Type')" />
+                        <x-text-input id="type1" class="block mt-1 w-full" type="number" name="type1"
+                            :value="old('type1')" />
+                        <x-input-error :messages="$errors->get('type1')" class="mt-2" />
+                    </div>
+                    
                     <div class="flex justify-end">
                         <x-primary-button type="submit">
                             {{ __('Modifier') }}
