@@ -17,7 +17,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('pokemon.index')" :active="request()->routeIs('pokemon.*')">
+                    <x-nav-link :href="route('admin.pokemon.index')" :active="request()->routeIs('pokemon.*')">
                         {{ __('Pokemon') }}
                     </x-nav-link>
                 </div>

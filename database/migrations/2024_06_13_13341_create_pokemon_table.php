@@ -18,6 +18,12 @@ return new class extends Migration
             $table->float('weight');
             $table->float('height');
             $table->string('image')->nullable();
+            
+            $table->foreignId('move1_id')->references('id')->on('moves')->onDelete('cascade');
+            $table->foreignId('move2_id')->nullable()->references('id')->on('moves')->onDelete('cascade');
+            $table->foreignId('move3_id')->nullable()->references('id')->on('moves')->onDelete('cascade');
+            $table->foreignId('move4_id')->nullable()->references('id')->on('moves')->onDelete('cascade');
+
             $table->foreignId('type1_id')->references('id')->on('types')->onDelete('cascade');
             $table->foreignId('type2_id')->nullable()->references('id')->on('types')->onDelete('cascade');
             $table->timestamps();

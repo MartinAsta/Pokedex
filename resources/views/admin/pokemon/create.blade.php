@@ -45,11 +45,84 @@
                 </div>
 
                 <div>
-                    <x-input-label for="type1" :value="__('Type')" />
-                    <x-text-input id="type1" class="block mt-1 w-full" type="number" name="type1"
-                        :value="old('type1')" />
-                    <x-input-error :messages="$errors->get('type1')" class="mt-2" />
+                    <x-input-label for="type1" :value="__('Type 1')" />
+                    <select id="type1" name="type1" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($types as $type)
+                            <option value="{{ $type->id }}" {{ old('type1') == $type->id ? 'selected' : '' }}>
+                                {{ $type->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move1')" class="mt-2" />
                 </div>
+
+                <div>
+                    <x-input-label for="type2" :value="__('Type 2')" />
+                    <select id="type2" name="type2" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($types as $type)
+                            <option value="{{ $type->id }}" {{ old('type2') == $type->id ? 'selected' : '' }}>
+                                {{ $type->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move1')" class="mt-2" />
+                </div>
+
+                <div>
+                    <x-input-label for="move1" :value="__('Attaque 1')" />
+                    <select id="move1" name="move1" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($moves as $move)
+                            <option value="{{ $move->id }}" {{ old('move1') == $move->id ? 'selected' : '' }}>
+                                {{ $move->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move1')" class="mt-2" />
+                </div>
+
+                <!-- Repeat the above structure for move2, move3, and move4 -->
+                <div>
+                    <x-input-label for="move2" :value="__('Attaque 2')" />
+                    <select id="move2" name="move2" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($moves as $move)
+                            <option value="{{ $move->id }}" {{ old('move2') == $move->id ? 'selected' : '' }}>
+                                {{ $move->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move2')" class="mt-2" />
+                </div>
+
+                <div>
+                    <x-input-label for="move3" :value="__('Attaque 3')" />
+                    <select id="move3" name="move3" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($moves as $move)
+                            <option value="{{ $move->id }}" {{ old('move3') == $move->id ? 'selected' : '' }}>
+                                {{ $move->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move3')" class="mt-2" />
+                </div>
+
+                <div>
+                    <x-input-label for="move4" :value="__('Attaque 4')" />
+                    <select id="move4" name="move4" class="block mt-1 w-full">
+                        <option value="">-</option>
+                        @foreach($moves as $move)
+                            <option value="{{ $move->id }}" {{ old('move4') == $move->id ? 'selected' : '' }}>
+                                {{ $move->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('move4')" class="mt-2" />
+                </div>
+
 
                 <div class="flex justify-end">
                     <x-primary-button type="submit">

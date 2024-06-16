@@ -27,6 +27,11 @@ class PokemonUpdateRequest extends FormRequest
             'weight' => 'required|numeric',
             'height' => 'required|numeric',
             'type1' => 'required|numeric',
+            'type2' => 'nullable|numeric',
+            'move1' => 'required|numeric',
+            'move2' => 'nullable|numeric',
+            'move3' => 'nullable|numeric',
+            'move4' => 'nullable|numeric',
         ];
     }
 }

@@ -26,5 +26,12 @@ class MovesTableData extends Seeder
             'move_descr'=>'Do not bend the paper, Maxwell.',
             'type_id'=>1
         ]);
+
+        DB::table('moves')->insert([
+            'name'=>'Météore',
+            'damage'=>81,
+            'move_descr'=>"Fait tomber un météore sur l'ennemi.",
+            'type_id'=>2
+        ]);
     }
 }

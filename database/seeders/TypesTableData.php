@@ -18,5 +18,11 @@ class TypesTableData extends Seeder
             'image'=>'images/types/normal.png',
             'colour'=>'#808080'
         ]);
+
+        DB::table('types')->insert([
+            'name'=>'Feu',
+            'image'=>'images/types/feu.png',
+            'colour'=>'##d1530a'
+        ]);
     }
 }

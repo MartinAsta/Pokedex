@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pokemon;
+use App\Models\Moves;
+use App\Models\Types;
 use Illuminate\Http\Request;
 use App\Http\Requests\PokemonCreateRequest;
 use App\Http\Requests\PokemonUpdateRequest;
@@ -32,7 +34,13 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        return view('admin.pokemon.create');
+        $moves = Moves::all();
+        $types = Types::all();
+
+        return view(
+            'admin.pokemon.create',
+            ['moves' => $moves, 'types' => $types]
+        );
     }
 
     /**
@@ -41,11 +49,28 @@ class PokemonController extends Controller
     public function store(PokemonCreateRequest $request)
     {
         $pokemon = Pokemon::make();
+
         $pokemon->name = $request->validated()['name'];
         $pokemon->hp = $request->validated()['hp'];
         $pokemon->weight = $request->validated()['weight'];
         $pokemon->height = $request->validated()['height'];
+
         $pokemon->type1_id = $request->validated()['type1'];
+        if ($request['type1'] !== $request['type2']) {
+            $pokemon->type2_id = $request->validated()['type2'];
+        }
+
+        $pokemon->move1_id = $request->validated()['move1'];
+        if ($request['move1'] !== $request['move2']) {
+            $pokemon->move2_id = $request->validated()['move2'];
+        }
+        if ($request['move1'] !== $request['move3'] && $request['move2'] !== $request['move3']) {
+            $pokemon->move3_id = $request->validated()['move3'];
+        }
+        if ($request['move1'] !== $request['move4'] && $request['move2'] !== $request['move4'] && $request['move3'] !== $request['move4']) {
+            $pokemon->move4_id = $request->validated()['move4'];
+        }
+
         $pokemon->save();
 
         return redirect()->route('admin.pokemon.index');
@@ -64,7 +89,10 @@ class PokemonController extends Controller
      */
     public function edit(Pokemon $pokemon)
     {
-        return view('admin.pokemon.edit', compact('pokemon'));
+        $moves = Moves::all();
+        $types = Types::all();
+
+        return view('admin.pokemon.edit', compact('pokemon'),['moves' => $moves, 'types' => $types,]);
     }
 
     /**
@@ -76,7 +104,22 @@ class PokemonController extends Controller
         $pokemon->hp = $request->validated()['hp'];
         $pokemon->height = $request->validated()['height'];
         $pokemon->weight = $request->validated()['weight'];
+        
         $pokemon->type1_id = $request->validated()['type1'];
+        if ($request['type1'] !== $request['type2']) {
+            $pokemon->type2_id = $request->validated()['type2'];
+        }
+
+        $pokemon->move1_id = $request->validated()['move1'];
+        if ($request['move1'] !== $request['move2']) {
+            $pokemon->move2_id = $request->validated()['move2'];
+        }
+        if ($request['move1'] !== $request['move3'] && $request['move2'] !== $request['move3']) {
+            $pokemon->move3_id = $request->validated()['move3'];
+        }
+        if ($request['move1'] !== $request['move4'] && $request['move2'] !== $request['move4'] && $request['move3'] !== $request['move4']) {
+            $pokemon->move4_id = $request->validated()['move4'];
+        }
 
         $pokemon->save();
 

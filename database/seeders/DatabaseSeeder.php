@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableData::class,
             TypesTableData::class,
+            MovesTableData::class,
             PokemonTableData::class,
-            MovesTableData::class
         ]);
     }
 }
