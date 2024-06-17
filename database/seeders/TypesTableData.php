@@ -16,13 +16,37 @@ class TypesTableData extends Seeder
         DB::table('types')->insert([
             'name'=>'Normal',
             'image'=>'images/types/normal.png',
-            'colour'=>'#808080'
+            'colour'=>'#C3C3C3'
         ]);
 
         DB::table('types')->insert([
             'name'=>'Feu',
             'image'=>'images/types/feu.png',
-            'colour'=>'##d1530a'
+            'colour'=>'#FF7F27'
+        ]);
+
+        DB::table('types')->insert([
+            'name'=>'Eau',
+            'image'=>'images/types/eau.png',
+            'colour'=>'#0099DB'
+        ]);
+
+        DB::table('types')->insert([
+            'name'=>'Plante',
+            'image'=>'images/types/plante.png',
+            'colour'=>'#A1CC1A'
+        ]);
+
+        DB::table('types')->insert([
+            'name'=>'Foudre',
+            'image'=>'images/types/foudre.png',
+            'colour'=>'#FFF200'
+        ]);
+
+        DB::table('types')->insert([
+            'name'=>'Dragon',
+            'image'=>'images/types/dragon.png',
+            'colour'=>'#D25ED4'
         ]);
     }
 }

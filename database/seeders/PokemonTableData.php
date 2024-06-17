@@ -31,7 +31,8 @@ class PokemonTableData extends Seeder
             'weight' => 8.5,
             'height' => 1.3,
             'image' => 'images/pokemon/e0686fbe7417a616d470c44260bf7f40.png',
-            'type1_id' => 2,
+            'type1_id' => 4,
+            'type2_id' => 6,
             'move1_id' => 3,
         ]);
 
