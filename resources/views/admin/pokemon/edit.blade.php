@@ -14,7 +14,8 @@
                 </div>
             </div>
 
-            <form method="POST" action="{{ route('pokemon.update', $pokemon) }}" class="flex flex-col space-y-4 text-gray-500">
+            <form method="POST" action="{{ route('pokemon.update', $pokemon) }}"
+                class="flex flex-col space-y-4 text-gray-500" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -32,13 +33,15 @@
 
                 <div>
                     <x-input-label for="weight" :value="__('Poids')" />
-                    <x-text-input id="weight" class="block mt-1 w-full" type="number" step="0.1" name="weight" :value="old('weight', $pokemon->weight)" />
+                    <x-text-input id="weight" class="block mt-1 w-full" type="number" step="0.1" name="weight"
+                        :value="old('weight', $pokemon->weight)" />
                     <x-input-error :messages="$errors->get('weight')" class="mt-2" />
                 </div>
 
                 <div>
                     <x-input-label for="height" :value="__('Taille')" />
-                    <x-text-input id="height" class="block mt-1 w-full" type="number" step="0.1" name="height" :value="old('height', $pokemon->height)" />
+                    <x-text-input id="height" class="block mt-1 w-full" type="number" step="0.1" name="height"
+                        :value="old('height', $pokemon->height)" />
                     <x-input-error :messages="$errors->get('height')" class="mt-2" />
                 </div>
 
@@ -118,6 +121,16 @@
                         @endforeach
                     </select>
                     <x-input-error :messages="$errors->get('move4')" class="mt-2" />
+                </div>
+
+                <div>
+                    <x-input-label for="img" :value="__('Image')" />
+                    @if ($pokemon->image)
+                        <img src="{{ asset('storage/' . $pokemon->image) }}" alt="Image du Pokemon"
+                            class="aspect-auto h-64 rounded shadow mt-2 mb-4 object-cover object-center">
+                    @endif
+                    <x-text-input id="img" class="block mt-1 w-full" type="file" name="img" />
+                    <x-input-error :messages="$errors->get('img')" class="mt-2" />
                 </div>
 
                 <div class="flex justify-end">

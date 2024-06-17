@@ -71,6 +71,12 @@ class PokemonController extends Controller
             $pokemon->move4_id = $request->validated()['move4'];
         }
 
+        if ($request->hasFile('img')) {
+            $path = $request->file('img')->store('images/pokemon', 'public');
+            $pokemon->image = $path;
+        }
+        
+
         $pokemon->save();
 
         return redirect()->route('admin.pokemon.index');
@@ -119,6 +125,11 @@ class PokemonController extends Controller
         }
         if ($request['move1'] !== $request['move4'] && $request['move2'] !== $request['move4'] && $request['move3'] !== $request['move4']) {
             $pokemon->move4_id = $request->validated()['move4'];
+        }
+
+        if ($request->hasFile('img')) {
+            $path = $request->file('img')->store('images/pokemon', 'public');
+            $pokemon->image = $path;
         }
 
         $pokemon->save();

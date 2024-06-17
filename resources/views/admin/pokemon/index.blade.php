@@ -17,7 +17,8 @@
 
                         <div class="flex  items-center justify-center space-x-8">
                             <a href="{{ route('pokemon.create') }}"
-                                class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Ajouter un
+                                class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Ajouter
+                                un
                                 Pokemon</a>
                         </div>
                     </div>
@@ -26,6 +27,7 @@
                         <table class="table-auto w-full">
                             <thead>
                                 <tr class="uppercase text-left">
+                                    <th class="px-1 py-2 border">Id :</th>
                                     <th class="px-4 py-2 border">Pokemon :</th>
                                     <th class="px-4 py-2 border"></th>
                                 </tr>
@@ -34,10 +36,13 @@
                                 @foreach ($pokemon as $poke)
                                     <tr class="hover:bg-gray-50 odd:bg-gray-100 hover:odd:bg-gray-200 transition">
                                         <td class="border px-4 py-2">
-                                            {{ $poke->name }}</td>
+                                            {{ $poke->id }}
+                                        </td>
+                                        <td class="border px-4 py-2">
+                                            {{ $poke->name }}
+                                        </td>
                                         <td class="border px-4 py-2 space-x-4">
-                                            <a href="{{ route('pokemon.edit', $poke->id) }}"
-                                                class="text-blue-400">Edit</a>
+                                            <a href="{{ route('pokemon.edit', $poke->id) }}" class="text-blue-400">Edit</a>
                                             <form action="{{ route('pokemon.destroy', $poke->id) }}" method="POST"
                                                 class="inline">
                                                 @csrf

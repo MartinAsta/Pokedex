@@ -32,6 +32,7 @@ class PokemonCreateRequest extends FormRequest
             'move2' => 'nullable|numeric',
             'move3' => 'nullable|numeric',
             'move4' => 'nullable|numeric',
+            'img' => 'nullable|image|max:2048',
         ];
     }
 }

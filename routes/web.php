@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomepageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,5 +38,5 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/pokemon', [AdminPokemonController::class, 'index'])->name('admin.pokemon.index');
 });
 
-Route::get('/pokemon', [PokemonController::class, 'index'])->name('pokemon.index');
+Route::get('/', [PokemonController::class, 'index'])->name('pokemon.index');
 Route::get('/pokemon/{id}', [PokemonController::class, 'show'])->name('pokemon.show');

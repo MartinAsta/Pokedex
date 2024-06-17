@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
             $url .= 'admin/pokemon';
         }
         else{
-            $url .= '/pokemon';
+            $url .= '/';
         }
 
         return redirect()->intended($url);

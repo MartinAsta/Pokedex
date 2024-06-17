@@ -14,7 +14,8 @@
                 </div>
             </div>
 
-            <form method="POST" action="{{ route('pokemon.store') }}" class="flex flex-col space-y-4 text-gray-500">
+            <form method="POST" action="{{ route('pokemon.store') }}" class="flex flex-col space-y-4 text-gray-500"
+                enctype="multipart/form-data">
                 @csrf
 
                 <div>
@@ -54,7 +55,7 @@
                             </option>
                         @endforeach
                     </select>
-                    <x-input-error :messages="$errors->get('move1')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('type1')" class="mt-2" />
                 </div>
 
                 <div>
@@ -67,7 +68,7 @@
                             </option>
                         @endforeach
                     </select>
-                    <x-input-error :messages="$errors->get('move1')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('type2')" class="mt-2" />
                 </div>
 
                 <div>
@@ -123,6 +124,11 @@
                     <x-input-error :messages="$errors->get('move4')" class="mt-2" />
                 </div>
 
+                <div>
+                    <x-input-label for="img" :value="__('Image')" />
+                    <x-text-input id="img" class="block mt-1 w-full" type="file" name="img" />
+                    <x-input-error :messages="$errors->get('img')" class="mt-2" />
+                </div>
 
                 <div class="flex justify-end">
                     <x-primary-button type="submit">
