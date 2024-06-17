@@ -33,7 +33,9 @@ class PokemonTableData extends Seeder
             'image' => 'images/pokemon/e0686fbe7417a616d470c44260bf7f40.png',
             'type1_id' => 4,
             'type2_id' => 6,
-            'move1_id' => 3,
+            'move1_id' => 5,
+            'move2_id' => 7,
+            'move3_id' => 3,
         ]);
 
         DB::table('pokemon')->insert([
@@ -42,8 +44,8 @@ class PokemonTableData extends Seeder
             'weight' => 12.6,
             'height' => 5.9,
             'image' => 'images/pokemon/139b3062dd89fee76917d0f0cd88f80f.png',
-            'type1_id' => 1,
-            'move1_id' => 3,
+            'type1_id' => 3,
+            'move1_id' => 6,
         ]);
         DB::table('pokemon')->insert([
             'name' => 'Deimos',
@@ -51,8 +53,9 @@ class PokemonTableData extends Seeder
             'weight' => 1500,
             'height' => 15,
             'image' => 'images/pokemon/84868c74ede49128cb20b05163da6658.png',
-            'type1_id' => 1,
-            'move1_id' => 3,
+            'type1_id' => 4,
+            'type2_id' => 2,
+            'move1_id' => 7,
         ]);
         DB::table('pokemon')->insert([
             'name' => 'Gorseval',
@@ -60,8 +63,8 @@ class PokemonTableData extends Seeder
             'weight' => 2000,
             'height' => 12,
             'image' => 'images/pokemon/9f13b1dfef72064f125349814e293268.png',
-            'type1_id' => 1,
-            'move1_id' => 3,
+            'type1_id' => 2,
+            'move1_id' => 5,
         ]);
         DB::table('pokemon')->insert([
             'name' => 'Qadim',
@@ -70,7 +73,7 @@ class PokemonTableData extends Seeder
             'height' => 4,
             'image' => 'images/pokemon/62c81c2719113325cc163fe73ad6a140.png',
             'type1_id' => 1,
-            'move1_id' => 3,
+            'move1_id' => 2,
         ]);
         DB::table('pokemon')->insert([
             'name' => 'Xera',
@@ -78,8 +81,8 @@ class PokemonTableData extends Seeder
             'weight' => 80,
             'height' => 2,
             'image' => 'images/pokemon/b881d9b672ba40661dda421a0d5f53bc.png',
-            'type1_id' => 1,
-            'move1_id' => 3,
+            'type1_id' => 6,
+            'move1_id' => 6,
         ]);
         DB::table('pokemon')->insert([
             'name' => 'Samarog',
@@ -87,8 +90,8 @@ class PokemonTableData extends Seeder
             'weight' => 2300,
             'height' => 10,
             'image' => 'images/pokemon/0840a50da92d6390fe70210b835c89d3.png',
-            'type1_id' => 1,
-            'move1_id' => 3,
+            'type1_id' => 4,
+            'move1_id' => 4,
         ]);
     }
 }

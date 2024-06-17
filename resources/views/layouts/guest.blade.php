@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
+<head style="background-color: #ED2B2B;">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,7 +16,7 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen flex flex-col pt-6 sm:pt-0 bg-red-500">
         <div class="container mx-auto flex flex-col space-y-10">
             <nav class="flex justify-between items-center py-2">
                 <div>
