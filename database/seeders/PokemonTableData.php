@@ -30,7 +30,7 @@ class PokemonTableData extends Seeder
             'hp' => 49,
             'weight' => 8.5,
             'height' => 1.3,
-            'image' => 'images/pokemon/e0686fbe7417a616d470c44260bf7f40.png',
+            'image' => 'images/pokemon/shatmo.png',
             'type1_id' => 4,
             'type2_id' => 6,
             'move1_id' => 5,

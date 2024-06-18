@@ -35,6 +35,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::resource('pokemon', AdminPokemonController::class);
+    Route::get('/', [AdminPokemonController::class, 'index'])->name('admin.pokemon.index');
     Route::get('/pokemon', [AdminPokemonController::class, 'index'])->name('admin.pokemon.index');
 });
 

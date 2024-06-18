@@ -14,7 +14,7 @@
                 </div>
             </form>
 
-            <ul class="grid gap-8">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 @foreach ($pokemon as $poke)
                     <li>
                         <x-pokemon-card :pokemon="$poke" />

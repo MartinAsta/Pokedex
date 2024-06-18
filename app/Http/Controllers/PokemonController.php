@@ -23,7 +23,7 @@ class PokemonController extends Controller
 
         // Order the results by id by default
         $pokemon = $query->orderBy('id')
-            ->paginate(12); // Paginate results with 12 entries per page
+            ->paginate(6); // Paginate results with 6 entries per page
 
         // Return the view with the Pokémon data
         return view('pokemon.index', [

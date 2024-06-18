@@ -1,25 +1,18 @@
 <x-app-layout>
-
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pokemon') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
+    <div class="py-12 bg-red-500 min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div class="flex justify-between mt-8">
-                        <div class=" text-2xl">
+                        <div class="text-2xl">
                             Liste des Pokemon (ADMIN)
                         </div>
 
-                        <div class="flex  items-center justify-center space-x-8">
+                        <div class="flex items-center justify-center space-x-8">
                             <a href="{{ route('pokemon.create') }}"
-                                class="text-gray-500 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">Ajouter
-                                un
-                                Pokemon</a>
+                                class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition">
+                                Ajouter un Pokemon
+                            </a>
                         </div>
                     </div>
 
@@ -63,5 +56,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>
