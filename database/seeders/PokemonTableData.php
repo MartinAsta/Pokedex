@@ -43,7 +43,7 @@ class PokemonTableData extends Seeder
             'hp' => 45,
             'weight' => 12.6,
             'height' => 5.9,
-            'image' => 'images/pokemon/139b3062dd89fee76917d0f0cd88f80f.png',
+            'image' => 'images/pokemon/mained.png',
             'type1_id' => 3,
             'move1_id' => 6,
         ]);
@@ -52,8 +52,8 @@ class PokemonTableData extends Seeder
             'hp' => 400,
             'weight' => 1500,
             'height' => 15,
-            'image' => 'images/pokemon/84868c74ede49128cb20b05163da6658.png',
-            'type1_id' => 4,
+            'image' => 'images/pokemon/deimos.png',
+            'type1_id' => 3,
             'type2_id' => 2,
             'move1_id' => 7,
         ]);
@@ -62,8 +62,9 @@ class PokemonTableData extends Seeder
             'hp' => 250,
             'weight' => 2000,
             'height' => 12,
-            'image' => 'images/pokemon/9f13b1dfef72064f125349814e293268.png',
-            'type1_id' => 2,
+            'image' => 'images/pokemon/gorseval.png',
+            'type1_id' => 3,
+            'type2_id' => 5,
             'move1_id' => 5,
         ]);
         DB::table('pokemon')->insert([
@@ -71,7 +72,7 @@ class PokemonTableData extends Seeder
             'hp' => 300,
             'weight' => 150,
             'height' => 4,
-            'image' => 'images/pokemon/62c81c2719113325cc163fe73ad6a140.png',
+            'image' => 'images/pokemon/qadim.png',
             'type1_id' => 1,
             'move1_id' => 2,
         ]);
@@ -80,7 +81,7 @@ class PokemonTableData extends Seeder
             'hp' => 250,
             'weight' => 80,
             'height' => 2,
-            'image' => 'images/pokemon/b881d9b672ba40661dda421a0d5f53bc.png',
+            'image' => 'images/pokemon/xera.png',
             'type1_id' => 6,
             'move1_id' => 6,
         ]);
@@ -89,8 +90,8 @@ class PokemonTableData extends Seeder
             'hp' => 350,
             'weight' => 2300,
             'height' => 10,
-            'image' => 'images/pokemon/0840a50da92d6390fe70210b835c89d3.png',
-            'type1_id' => 4,
+            'image' => 'images/pokemon/samarog.png',
+            'type1_id' => 1,
             'move1_id' => 4,
         ]);
     }
