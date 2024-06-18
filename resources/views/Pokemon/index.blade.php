@@ -8,7 +8,7 @@
                     <input type="text" name="search" id="search" placeholder="Rechercher un Pokemon"
                         class="flex-grow border border-gray-300 rounded shadow px-4 py-2 mr-4" value="{{ request()->search }}"
                         autofocus />
-                    <button type="submit" class="bg-white text-gray-600 px-4 py-2 rounded-lg shadow">
+                    <button type="submit" id="SubmitSearch" class="bg-white text-gray-600 px-4 py-2 rounded-lg shadow">
                         <x-heroicon-o-magnifying-glass class="h-5 w-5" />
                     </button>
                 </div>

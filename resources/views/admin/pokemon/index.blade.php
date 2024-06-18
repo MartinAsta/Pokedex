@@ -9,7 +9,7 @@
                         </div>
 
                         <div class="flex items-center justify-center space-x-8">
-                            <a href="{{ route('pokemon.create') }}"
+                            <a href="{{ route('pokemon.create') }}" id="Create"
                                 class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition">
                                 Ajouter un Pokemon
                             </a>
@@ -35,7 +35,7 @@
                                             {{ $poke->name }}
                                         </td>
                                         <td class="border px-4 py-2 space-x-4">
-                                            <a href="{{ route('pokemon.edit', $poke->id) }}" class="text-blue-400">Edit</a>
+                                            <a id="poke{{$poke->id}}" href="{{ route('pokemon.edit', $poke->id) }}" class="text-blue-400">Edit</a>
                                             <form action="{{ route('pokemon.destroy', $poke->id) }}" method="POST"
                                                 class="inline">
                                                 @csrf

@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="flex justify-end">
-                        <x-primary-button type="submit">
+                        <x-primary-button id="SubmitCreate" type="submit">
                             {{ __('Create') }}
                         </x-primary-button>
                     </div>

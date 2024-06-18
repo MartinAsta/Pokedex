@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center h-full border-4 border-black rounded-full shadow-md p-5 w-full hover:shadow-lg hover:scale-105 transition"
+<div id="card{{$pokemon->id}}" class="flex justify-center items-center h-full border-4 border-black rounded-full shadow-md p-5 w-full hover:shadow-lg hover:scale-105 transition"
     style="background-color: #DBEDDF;">
     <a href="{{ route('pokemon.show', $pokemon) }}" class="flex flex-col h-full space-y-4 items-center">
         <div class="flex items-center">

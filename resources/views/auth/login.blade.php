@@ -27,7 +27,7 @@
                         </a>
                     @endif
 
-                    <x-primary-button class="px-6 py-2 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <x-primary-button id="Login" class="px-6 py-2 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         {{ __('Log in') }}
                     </x-primary-button>
                 </div>
