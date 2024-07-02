@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Pokemon;
 use App\Models\Moves;
-use App\Models\Types;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Requests\PokemonCreateRequest;
 use App\Http\Requests\PokemonUpdateRequest;
@@ -35,7 +35,7 @@ class PokemonController extends Controller
     public function create()
     {
         $moves = Moves::all();
-        $types = Types::all();
+        $types = Type::all();
 
         return view(
             'admin.pokemon.create',
@@ -96,7 +96,7 @@ class PokemonController extends Controller
     public function edit(Pokemon $pokemon)
     {
         $moves = Moves::all();
-        $types = Types::all();
+        $types = Type::all();
 
         return view('admin.pokemon.edit', compact('pokemon'),['moves' => $moves, 'types' => $types,]);
     }
@@ -144,6 +144,6 @@ class PokemonController extends Controller
     {
         $pokemon->delete();
 
-        return redirect()->back();
+        return redirect()->route('admin.pokemon.index');
     }
 }

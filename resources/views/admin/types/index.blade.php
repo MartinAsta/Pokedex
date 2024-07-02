@@ -5,13 +5,13 @@
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div class="flex justify-between mt-8">
                         <div class="text-2xl">
-                            Liste des Pokemon (ADMIN)
+                            Liste des types (ADMIN)
                         </div>
 
                         <div class="flex items-center justify-center space-x-8">
-                            <a href="{{ route('pokemon.create') }}" id="Create"
+                            <a href="{{ route('types.create') }}" id="Create"
                                 class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition">
-                                Ajouter un Pokemon
+                                Ajouter un type
                             </a>
                         </div>
                     </div>
@@ -20,24 +20,23 @@
                         <table class="table-auto w-full">
                             <thead>
                                 <tr class="uppercase text-left">
-                                    <th class="px-1 py-2 border">Id :</th>
-                                    <th class="px-4 py-2 border">Pokemon :</th>
+                                    <th class="px-4 py-2 border">Type :</th>
                                     <th class="px-4 py-2 border"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pokemon as $poke)
+                                @foreach ($types as $t)
                                     <tr class="hover:bg-gray-50 odd:bg-gray-100 hover:odd:bg-gray-200 transition">
                                         <td class="border px-4 py-2">
-                                            {{ $poke->id }}
+                                            {{ $t->id }}
                                         </td>
                                         <td class="border px-4 py-2">
-                                            {{ $poke->name }}
+                                            {{ $t->name }}
                                         </td>
                                         <td class="border px-4 py-2 space-x-4">
-                                            <a id="poke{{$poke->id}}" href="{{ route('pokemon.edit', $poke->id) }}"
+                                            <a id="type{{$t->id}}" href="{{ route('types.edit', $t->id) }}"
                                                 class="text-blue-400">Edit</a>
-                                            <form action="{{ route('pokemon.destroy', $poke->id) }}" method="POST"
+                                            <form action="{{ route('types.destroy', $t->id) }}" method="POST"
                                                 class="inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -50,7 +49,7 @@
                         </table>
 
                         <div class="mt-4">
-                            {{ $pokemon->links() }}
+                            {{ $types->links() }}
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,6 @@ class Moves extends Model
     }
 
     public function type(){
-        return $this->belongsTo(Types::class,"type_id");
+        return $this->belongsTo(Type::class,"type_id");
     }
 }

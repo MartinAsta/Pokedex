@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->integer('damage');
             $table->text('move_descr');
-            $table->foreignId('type_id')->references('id')->on('types')->onDelete('cascade');
+            $table->foreignId('type_id')->nullable()->references('id')->on('types')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

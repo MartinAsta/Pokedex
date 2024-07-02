@@ -15,11 +15,11 @@ class Pokemon extends Model
     }
 
     public function type1(){
-        return $this->belongsTo(Types::class,"type1_id");
+        return $this->belongsTo(Type::class,"type1_id");
     }
 
     public function type2(){
-        return $this->belongsTo(Types::class,"type2_id");
+        return $this->belongsTo(Type::class,"type2_id");
     }
 
     public function move1(){

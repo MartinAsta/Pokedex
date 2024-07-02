@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('image')->unique();
             $table->string('colour')->unique();
+            $table->timestamps();
         });
     }
 

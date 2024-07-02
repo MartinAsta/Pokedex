@@ -12,6 +12,9 @@
                     <x-nav-link :href="route('admin.pokemon.index')" :active="request()->routeIs('pokemon.*')">
                         {{ __('Pokemon') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.types.index')" :active="request()->routeIs('types.*')">
+                        {{ __('Types') }}
+                    </x-nav-link>
                 </div>
             </div>
 
