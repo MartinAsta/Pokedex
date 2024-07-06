@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('admin.types.index')" :active="request()->routeIs('types.*')">
                         {{ __('Types') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.moves.index')" :active="request()->routeIs('moves.*')">
+                        {{ __('Attaques') }}
+                    </x-nav-link>
                 </div>
             </div>
 

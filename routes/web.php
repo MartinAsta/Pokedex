@@ -5,6 +5,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PokemonController;
 use App\Http\Controllers\Admin\PokemonController as AdminPokemonController;
 use App\Http\Controllers\Admin\TypesController as AdminTypesController;
+use App\Http\Controllers\Admin\MovesController as AdminMovesController;
 use App\Http\Controllers\Admin\CreateController;
 
 
@@ -41,6 +42,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
     Route::resource('types', AdminTypesController::class);
     Route::get('/types', [AdminTypesController::class, 'index'])->name('admin.types.index');
+
+    Route::resource('moves', AdminMovesController::class);
+    Route::get('/moves', [AdminMovesController::class, 'index'])->name('admin.moves.index');
 });
 
 Route::get('/', [PokemonController::class, 'index'])->name('pokemon.index');

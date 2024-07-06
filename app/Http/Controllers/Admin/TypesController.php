@@ -7,7 +7,7 @@ use App\Http\Requests\TypeCreateRequest;
 use App\Http\Requests\TypeUpdateRequest;
 use App\Models\Type;
 use App\Models\Pokemon;
-use App\Models\Moves;
+use App\Models\Move;
 use Illuminate\Http\Request;
 
 class TypesController extends Controller
@@ -110,7 +110,7 @@ class TypesController extends Controller
             $pokemon->save();
         }
 
-        Moves::where('type_id', $type->id)
+        Move::where('type_id', $type->id)
             ->update(['type_id' => null]);
 
         $type->delete();
