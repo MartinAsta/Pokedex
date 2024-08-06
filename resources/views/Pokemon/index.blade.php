@@ -1,6 +1,13 @@
 <x-guest-layout>
     <div class="min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Add the button for the admin page here -->
+            <div class="flex justify-end mb-4">
+                <a href="http://pokedex.test/admin" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Admin
+                </a>
+            </div>
+
             <h1 class="font-bold text-xl mb-4">Liste des Pokemons</h1>
 
             <form action="{{ route('pokemon.index') }}" method="GET" class="mb-4">
