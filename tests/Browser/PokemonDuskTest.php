@@ -14,7 +14,7 @@ class PokemonDuskTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) use ($userAdmin) {
             $browser->visit('/login')
-                ->type('login', $userAdmin->nickname)
+                ->type('login', 'mart')
                 ->type('password', 123)
                 ->press('#Login')
                 ->press('#Create')
